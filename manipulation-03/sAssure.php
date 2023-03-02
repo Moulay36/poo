@@ -3,13 +3,31 @@
 
 require_once 'assure.php';
 
-$oAssure = new Assure();
+$oAssure1= new Assure();
+$oAssure2 = new Assure();
 
-// var_dump(oAssure);
+$oAssure1->reglerAssurance();
 
-echo "l'objet  \$oAssure est type" . gettype($oAssure) . "<br>";
+/* $oAssure1->reglerAssurance(); */
 
-echo "l'age de l'objet  \$oAssure est " . $oAssure->age . "<br>";
+$oAssure1->parrainer($oAssure2);
 
-$oAssure->age =  $oAssure->age + 2;
-echo "l'age de l'objet \$oAssure est :" . $oAssure->age;
+$oAssure1->avoirAccident();
+
+$oAssure2->reglerAssurance();
+
+
+
+echo "le BM de l'assuré 01 est de : " . $oAssure1->getBonusMalus() .  "<br>";
+
+/* $oAssure1->parrainer($oAssure2); */
+
+echo "le BM de l'assuré 02 est de : " . $oAssure2->getBonusMalus() .  "<br>";
+
+
+
+
+
+//var_dump($oAssure1);
+//var_dump($oAssure2);
+
