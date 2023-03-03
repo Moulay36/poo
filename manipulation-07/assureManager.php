@@ -56,7 +56,9 @@ class assureManager{
         //Requete attendue de type SELECT(liste des assurés
         $sql = "SELECT * FROM assure";
         $idRequete =  $this->cnx->query($sql);
-        while ;
+        while($row = $idRequete->fetch(PDO::FETCH_ASSOC)){
+            $assures[] = new Assure($row);
+        } 
     }
     public function getAssure($id){
         //Requete attendue de type SELECT (1 seul assuré)
